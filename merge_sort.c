@@ -1,7 +1,8 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#define INPUT_SIZE 10
+#include <time.h>
+#define INPUT_SIZE 100000
 
 void merge_sort(int[], int, int);
 void merge(int[], int, int, int);
@@ -12,11 +13,15 @@ int main(void){
 	for(i = 0; i < INPUT_SIZE; i++){
 		arr[i] = random();
 	}
+	clock_t start_time = clock();
         merge_sort(arr, 0, INPUT_SIZE - 1);
-        for(i = 0; i < INPUT_SIZE; i++){
+	clock_t end_time = clock();
+	double execution_time = (double)(end_time - start_time) / CLOCKS_PER_SEC;        
+	/*for(i = 0; i < INPUT_SIZE; i++){
                 printf("%i\n", arr[i]);
-        }
-        return 0;
+        }*/
+	printf("\nExecution Time = %f\n", execution_time);        
+	return 0;
 }
 
 /*

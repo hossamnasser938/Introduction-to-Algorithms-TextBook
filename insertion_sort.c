@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define INPUT_SIZE 10
+#include <time.h>
+#define INPUT_SIZE 100000
 
 void insertion_sort(int[], int);
 
@@ -10,11 +11,15 @@ int main(void){
 	for(i = 0; i < INPUT_SIZE; i++){
 		arr[i] = random();
 	}
+	clock_t start_time = clock();
         insertion_sort(arr, INPUT_SIZE);
+	clock_t end_time = clock();
+	double execution_time = (double)(end_time - start_time) / CLOCKS_PER_SEC;
         int k;
-        for(i = 0; i < INPUT_SIZE; i++){
+        /*for(i = 0; i < INPUT_SIZE; i++){
                 printf("%i\n", arr[i]);
-        }
+        }*/
+	printf("\nExecution Time = %f\n", execution_time);
         return 0;
 }
 
