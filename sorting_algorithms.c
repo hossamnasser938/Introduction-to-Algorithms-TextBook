@@ -1,43 +1,5 @@
-
-#include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
 #include "sorting_algorithms.h"
-#define INPUT_SIZE 100000
-
-void merge_sort(int[], int, int);
-void merge(int[], int, int, int);
-
-int main(void){
-	int arr[INPUT_SIZE];
-	int i;
-	for(i = 0; i < INPUT_SIZE; i++){
-		arr[i] = random();
-	}
-	clock_t start_time = clock();
-        merge_sort(arr, 0, INPUT_SIZE - 1);
-	clock_t end_time = clock();
-	double execution_time = (double)(end_time - start_time) / CLOCKS_PER_SEC;        
-	/*for(i = 0; i < INPUT_SIZE; i++){
-                printf("%i\n", arr[i]);
-        }*/
-	printf("\nExecution Time = %f\n", execution_time);        
-	return 0;
-}
-
-/*
-** A is the array to be sorted using merge sort
-** p is the index that points to the start of the portion of the array to be sorted
-** r is the index that points to the end of the portion of the array to be sorted
-*/
-void merge_sort(int A[], int p, int r){
-	if(p < r){
-		int q = (p + r) / 2;
-		merge_sort(A, p, q);
-		merge_sort(A, q + 1, r);
-		merge(A, p, q, r); 
-	}
-}
 
 /*
 ** A is the array with two sorted parts to be merged
@@ -99,3 +61,59 @@ void merge(int A[], int p, int q, int r){
 	free(R);
 	return;
 }
+
+/*
+** A is the array to be sorted using merge sort
+** p is the index that points to the start of the portion of the array to be sorted
+** r is the index that points to the end of the portion of the array to be sorted
+*/
+void merge_sort(int A[], int p, int r){
+	if(p < r){
+		int q = (p + r) / 2;
+		merge_sort(A, p, q);
+		merge_sort(A, q + 1, r);
+		merge(A, p, q, r); 
+	}
+}
+
+/*
+** A is the array to be sorted using insertion sort
+** n is the length of A
+*/
+void insertion_sort(int A[], int n){
+	int key = 0, i, j;
+	for(i = 1; i < n; i++){
+		key = A[i];
+		j = i - 1;
+		while(j >= 0 && A[j] > key){
+			A[j + 1] = A[j];
+			j--;
+		}
+		A[j + 1] = key;	
+	}
+	return;	
+}
+
+/*
+** A is the array to be sorted using selection sort
+** n is the length of A
+*/
+void selection_sort(int A[], int n){
+	int j, i, min_index, temp;
+	for(j = 0; j < n - 1; j++){
+		min_index = j; 
+		for(i = j + 1; i < n; i++){
+			if(A[min_index] > A[i]){
+				min_index = i;
+			}
+		}
+		if(min_index != j){
+			temp = A[j];
+                	A[j] = A[min_index];
+                	A[min_index] = temp;
+		}
+	}
+	return;
+}
+
+

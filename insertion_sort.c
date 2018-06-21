@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include "sorting_algorithms.h"
 #define INPUT_SIZE 100000
 
 void insertion_sort(int[], int);
