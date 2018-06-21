@@ -12,9 +12,8 @@ int main(void){
 	for(i = 0; i < INPUT_SIZE; i++){
 		arr[i] = random();
 	}
-        merge_sort(arr, 0, sizeof(arr) / sizeof(arr[0]) - 1);
-        int k;
-        for(i = 0, k = sizeof(arr) / sizeof(arr[0]); i < k; i++){
+        merge_sort(arr, 0, INPUT_SIZE - 1);
+        for(i = 0; i < INPUT_SIZE; i++){
                 printf("%i\n", arr[i]);
         }
         return 0;

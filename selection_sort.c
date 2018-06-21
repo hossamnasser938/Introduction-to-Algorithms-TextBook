@@ -10,9 +10,9 @@ int main(void){
 	for(i = 0; i < INPUT_SIZE; i++){
 		arr[i] = random();
 	}
-        selection_sort(arr, sizeof(arr) / sizeof(arr[0]));
+        selection_sort(arr, INPUT_SIZE);
         int k;
-        for(i = 0, k = sizeof(arr) / sizeof(arr[0]); i < k; i++){
+        for(i = 0; i < INPUT_SIZE; i++){
                 printf("%i\n", arr[i]);
         }
         return 0;
