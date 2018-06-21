@@ -1,18 +1,22 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#define INPUT_SIZE 10
 
 void merge_sort(int[], int, int);
 void merge(int[], int, int, int);
 
 int main(void){
-	int arr[] = {10, 5, 3, 6, 7, 1, 9, 2};
+	int arr[INPUT_SIZE];
+	int i;
+	for(i = 0; i < INPUT_SIZE; i++){
+		arr[i] = random();
+	}
         merge_sort(arr, 0, sizeof(arr) / sizeof(arr[0]) - 1);
-        int i, k;
+        int k;
         for(i = 0, k = sizeof(arr) / sizeof(arr[0]); i < k; i++){
-                printf("%i ", arr[i]);
+                printf("%i\n", arr[i]);
         }
-        printf("\n");
         return 0;
 }
 

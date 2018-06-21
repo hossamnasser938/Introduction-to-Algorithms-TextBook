@@ -1,16 +1,21 @@
 #include <stdio.h>
+#include <stdlib.h>
+#define INPUT_SIZE 10
 
 void insertion_sort(int[], int);
 
 int main(void){
-	int arr[] = {10, 5, 3, 6, 7, 1, 9, 2};
-	insertion_sort(arr, sizeof(arr) / sizeof(arr[0]));
-	int i, k;
-	for(i = 0, k = sizeof(arr) / sizeof(arr[0]); i < k; i++){
-		printf("%i ", arr[i]);
+	int arr[INPUT_SIZE];
+	int i;
+	for(i = 0; i < INPUT_SIZE; i++){
+		arr[i] = random();
 	}
-	printf("\n");
-	return 0; 
+        insertion_sort(arr, sizeof(arr) / sizeof(arr[0]));
+        int k;
+        for(i = 0, k = sizeof(arr) / sizeof(arr[0]); i < k; i++){
+                printf("%i\n", arr[i]);
+        }
+        return 0;
 }
 
 /*
