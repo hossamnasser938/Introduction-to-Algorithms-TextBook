@@ -15,7 +15,6 @@ int main(void){
         insertion_sort(arr, INPUT_SIZE);
 	clock_t end_time = clock();
 	double execution_time = (double)(end_time - start_time) / CLOCKS_PER_SEC;
-        int k;
         /*for(i = 0; i < INPUT_SIZE; i++){
                 printf("%i\n", arr[i]);
         }*/
