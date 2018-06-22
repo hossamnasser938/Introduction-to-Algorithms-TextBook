@@ -116,4 +116,34 @@ void selection_sort(int A[], int n){
 	return;
 }
 
+/*
+** A is the array that holds items to be swapped
+** i is the index of the item to be swapped
+** j is the index of the other item to be swapped
+*/
+void swap(int A[], int i, int j){
+	int temp = A[i];
+	A[i] = A[j];
+	A[j] = temp;
+}
+
+/*
+** A is the array to be sorted
+** n is the number of items within A
+*/
+void bubble_sort(int A[], int n){
+	int i, j, swapped_times;	
+	for(i = 0; i < n - 1; i++){
+		swapped_times = 0;
+		for(j = n-1; j > 0; j--){
+			if(A[j]	< A[j - 1]){
+				swap(A, j, j - 1);
+				swapped_times++;
+			}	
+		}
+		if(swapped_times == 0)
+			return;
+	} 
+}
+
 
