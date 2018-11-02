@@ -11,7 +11,7 @@ int main(void){
 		arr[i] = random();
 	}
 	clock_t start_time = clock();
-        merge_sort(arr, 0, INPUT_SIZE-1);
+        heap_sort(arr, INPUT_SIZE);
 	clock_t end_time = clock();
 	double execution_time = (double)(end_time - start_time) / CLOCKS_PER_SEC;        
 	/*for(i = 0; i < INPUT_SIZE; i++){
