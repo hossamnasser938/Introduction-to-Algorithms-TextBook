@@ -1,5 +1,5 @@
 #ifndef SORTING_ALGORITHMS_
-#define SORTINF_ALGORITHMS_
+#define SORTING_ALGORITHMS_
 
 void merge_sort(int[], int, int);
 void insertion_sort(int[], int);
