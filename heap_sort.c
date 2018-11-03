@@ -8,7 +8,6 @@ struct Heap{
 	int* array;
 };
 
-int parent(int);
 int left(int);
 int right(int);
 void max_hearify(struct Heap, int);
@@ -31,14 +30,6 @@ int main(void){
         }*/
 	printf("\nExecution Time = %f\n", execution_time);        
 	return 0;
-}
-
-/*
-** index is the index of a node
-** returns the nodes's parent index 
-*/
-int parent(int index){
-	return index / 2;
 }
 
 /*
