@@ -2,14 +2,15 @@
 #include <stdlib.h>
 #include <time.h>
 #define INPUT_SIZE 100000
+//macros: get rid of the cost of jumping and returning by repeating instructions at each call 
+#define left(i) 2*i
+#define right(i) 2*i+1 
 
 struct Heap{
 	int heap_size;
 	int* array;
 };
 
-int left(int);
-int right(int);
 void max_hearify(struct Heap, int);
 struct Heap build_max_heap(int[], int);
 void heap_sort(int[], int);
@@ -30,22 +31,6 @@ int main(void){
         }*/
 	printf("\nExecution Time = %f\n", execution_time);        
 	return 0;
-}
-
-/*
-** index is the index of a node
-** returns the nodes's left child index 
-*/
-int left(int index){
-	return 2 * index;
-}
-
-/*
-** index is the index of a node
-** returns the nodes's right child index 
-*/
-int right(int index){
-	return 2 * index + 1;
 }
 
 /*
