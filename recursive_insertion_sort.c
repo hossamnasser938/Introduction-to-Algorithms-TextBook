@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#define INPUT_SIZE 100000
+#define INPUT_SIZE 1000000
 
 void recursive_insertion_sort(int[], int);
 

@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include "sorting_algorithms.h"
-#define INPUT_SIZE 100000
+#define INPUT_SIZE 1000000
 
 int main(void){
 	int arr[INPUT_SIZE];

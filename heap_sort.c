@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#define INPUT_SIZE 100000
+#define INPUT_SIZE 1000000
 //macros: get rid of the cost of jumping and returning by repeating instructions at each call 
 #define left(i) 2*i
 #define right(i) 2*i+1 

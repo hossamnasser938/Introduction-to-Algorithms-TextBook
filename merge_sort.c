@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#define INPUT_SIZE 100000
+#define INPUT_SIZE 1000000
 
 void merge_sort(int[], int, int);
 void merge(int[], int, int, int);
