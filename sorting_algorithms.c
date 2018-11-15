@@ -19,6 +19,41 @@ void swap(int A[], int i, int j){
 }
 
 /*
+** A is the array with a portion to be partitioned
+** p is the start index of the portion of A to be partitioned in the current call
+** r is the end index of the portion of A to be partitioned in the current call
+*/
+int partition(int A[], int p, int r){
+	int x = A[r];
+	int i = p - 1;
+	
+	int j;	
+	for(j = p; j < r ; j++){
+		if(A[j] <= x){
+			i++;
+			swap(A, i, j);
+		}
+	}
+	
+	swap(A, i + 1, r);
+	
+	return i + 1;
+}
+
+/*
+** A is the array to be sorted
+** p is the start index of the portion of A to be sorted in the current call
+** r is the end index of the portion of A to be sorted in the current call   
+*/
+void quick_sort(int A[], int p, int r){
+	if(p < r){
+		int q = partition(A, p, r);
+		quick_sort(A, p, q - 1);
+		quick_sort(A, q + 1, r);
+	}
+}
+
+/*
 ** index is the index of a node
 ** returns the nodes's parent index 
 */
