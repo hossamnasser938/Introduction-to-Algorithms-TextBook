@@ -12,7 +12,7 @@ struct Heap{
 int parent(int);
 int left(int);
 int right(int);
-void max_hearify(struct Heap, int);
+void max_heapify(struct Heap, int);
 void swap(int[], int, int);
 int heap_maximum(struct Heap);
 int heap_extract_maximum(struct Heap);
@@ -66,7 +66,7 @@ int right(int index){
 ** index is the index of a node
 ** given a node that has a left and right child each represents a max-heap and their parent needs to be put in its right position so the whole subtree represents a max-heap
 */
-void max_hearify(struct Heap heap, int index){
+void max_heapify(struct Heap heap, int index){
 	int r = right(index);
 	int l = left(index);
 	int largest;
@@ -84,7 +84,7 @@ void max_hearify(struct Heap heap, int index){
 
 	if(index != largest){
 		swap(heap.array, index, largest);
-		max_hearify(heap, largest);
+		max_heapify(heap, largest);
 	}
 }
 
@@ -116,7 +116,7 @@ int heap_extract_maximum(struct Heap heap){
 	int max = heap.array[0];
 	heap.array[0] = heap.array[heap.heap_size - 1]; 
 	heap.heap_size--;
-	max_hearify(heap, 0);
+	max_heapify(heap, 0);
 	return max;
 }
 
