@@ -48,7 +48,7 @@ int * counting_sort(int A[], int n, int k){
     }
 
     //Put elements from A into their correct position in B
-    for(i = 0; i < n; i++){
+    for(i = n - 1; i >= 0; i--){
 	*(B + C[A[i]]) = A[i];
 	C[A[i]] = C[A[i]] - 1; 
     }
