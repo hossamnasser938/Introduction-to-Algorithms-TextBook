@@ -30,6 +30,11 @@ int main() {
     }
 
     print_list(l);
+
+    printf("Delete node of key = 4\n");
+    n = search_list(l, 4);
+    delete_node(l, n);
+    print_list(l);
     return 0;
 }
 
